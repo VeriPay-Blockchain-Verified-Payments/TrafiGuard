@@ -1,0 +1,45 @@
+@import '~antd/dist/antd.css';
+
+:root {
+  --primary-color: #1890ff;
+  --secondary-color: #7bbbf7;
+}
+
+@font-face {
+  font-family: 'Futura Bold';
+  src: local('Futura Bold'), url(/fonts/fb.otf) format('woff');
+}
+
+@media screen and (max-width: 768px) {
+  .fImage {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+a {
+  font-family: 'Futura Bold' !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"target": "es6",
+		"moduleResolution": "node",
+		"outDir": "build",
+		"baseUrl": ".",
+		"strict": true,
+		"allowSyntheticDefaultImports": true,
+		"noUnusedLocals": true
+	},
+	"include": [
+		"*"
+	],
+	"exclude": [
+		"node_modules",
+		"build"
+	]
+}

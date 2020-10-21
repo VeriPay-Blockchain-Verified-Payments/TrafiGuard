@@ -1,0 +1,9 @@
+#!/bin/bash
+export MAX_MEM=${MAX_MEM:-1500}
+
+git pull
+npm i
+npm run build
+forever stop build/index.js
+forever start -c node build/index.js
+

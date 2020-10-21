@@ -1,0 +1,130 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "momsWallet",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "momsInvestment",
+				"type": "address"
+			}
+		],
+		"name": "closeInvestment",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "momsWallet",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "depositAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "VeriPayName",
+				"type": "string"
+			}
+		],
+		"name": "deposit",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "momsInvestmentManagerContract",
+				"type": "address"
+			}
+		],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getAvailableVeriPays",
+		"outputs": [
+			{
+				"internalType": "string[]",
+				"name": "flowNames",
+				"type": "string[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "momsWallet",
+				"type": "address"
+			}
+		],
+		"name": "getMomsClosedInvestments",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "investments",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "momsWallet",
+				"type": "address"
+			}
+		],
+		"name": "getMomsOpenInvestments",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "investments",
+				"type": "address[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "VeriPayName",
+				"type": "string"
+			},
+			{
+				"internalType": "address",
+				"name": "VeriPayContractAddress",
+				"type": "address"
+			}
+		],
+		"name": "registerVeriPay",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "status",
+				"type": "string"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]

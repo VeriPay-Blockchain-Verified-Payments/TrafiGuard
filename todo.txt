@@ -1,0 +1,30 @@
+Objectives:
+
+- Design a basic UX flow. Define a shor user flow based on what we already have in the frontend of this project. We should make minimal editions to the code, but just enough to make it look like a different project.
+- Implement gas-as-a-service: Use have 3rd parties pay for gas costs
+- (Optional) Find a way for users to pay gas with ERC20 tokens
+- Research UMA contracts to see how can we use them as LEGO blocks for our protocol
+- Think of a creative use of Filecoin buckets (we're using them through Textile). I have created a bucket to store bills of lading (PDFs).
+- Import OpenGSN smart contracts into our Base.sol contract.
+- Find the Solidity codebase of Aave and Compound. I already have Yearn.finance's.
+- Get the following images from Google Images. The sizes are not a hard requirement, we just need those approximate dimensions
+380x420 Main image: A boat, a buoy, a life ring
+200x200 A boat
+200x200 An image of tokens or a reference to earning crypto
+200x200 Some containers or reference to marine trade
+200x200 Something related to pirates or a reference to marine risk
+200x200 An anchor
+200x200 A buoy
+200x200 A hurricane
+
+Begin integrating:
+
+- Bloom (Shane, Sathya to help)
+- Gnosis (Shane)
+- Aave, Compound, UMA (Alexander)
+
+Research:
+
+- Textile (Sathya, Alexander)
+- UMA (Sathya to help)
+- Other DeFi (1inch, Yearn) (Alexander)

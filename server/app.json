@@ -1,0 +1,6 @@
+{
+  "name": "receive-kit",
+  "description": "Easily receive and validate data from share-kit.",
+  "repository": "https://github.com/hellobloom/receive-kit",
+  "keywords": ["node", "express", "bloom", "receive-kit"]
+}

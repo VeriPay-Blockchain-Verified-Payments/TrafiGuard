@@ -1,0 +1,44 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_momsWallet",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_VeriPay",
+				"type": "address"
+			}
+		],
+		"stateMutability": "payable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "cashoutinvestment",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "earningstodate",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
