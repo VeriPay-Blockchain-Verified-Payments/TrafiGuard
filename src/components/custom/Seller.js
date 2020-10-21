@@ -1,16 +1,100 @@
-import React from 'react'
-import { Empty, Button } from 'antd'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import styled from 'styled-components'
+import { PlusOutlined, EyeOutlined } from '@ant-design/icons'
+import CollectionsPage from './LoanForm'
+
+
+
+import {
+  Row,
+  Col,
+  Card,
+  Statistic,
+  Form,
+  Button,
+  Modal,
+  InputNumber,
+  Typography,
+} from 'antd'
 import { Link } from 'react-router-dom'
 import BloomQR from './BloomRequest'
 
 import { useRoot } from '../../contexts/RootContext'
 
+const CardButton = styled(Button)`
+  border-radius: 20px;
+  display: block;
+  margin: 1rem 0;
+  width: 200px;
+`
+
+
 const ActiveFlows = () => {
-  const { isLoggedIn } = useRoot()
+  const history = useHistory()
+
+  const [visible, setVisible] = useState(false)
+  const [amountWei, setAmountWei] = useState(0)
+
+  const handleLoan = () => {
+    console.log(defaultAddress, String(amountWei), 'flow0')
+    takeLoan(defaultAddress, String(amountWei), 'flow0')
+  }
+
+  const showModal = () => {
+    setVisible(true)
+  }
+
+  const gotoWallet = e => {
+    setVisible(false)
+    history.push('/connect-wallet')
+  }
+
+  const handleCancel = e => {
+    setVisible(false)
+  }
+
+  const { isLoggedIn, defaultAddress, takeLoan } = useRoot()
+  
+
 
   return isLoggedIn() ? (
-    
-    <BloomQR> </BloomQR>
+    <>
+    <Row>
+    <Col span={24} sm={12} md={8} style={{ marginBottom: '2rem' }}>
+            <Card style={{ boxShadow: '1px 5px 15px 0px rgba(0,0,0,0.1)' }}>
+      <CardButton type="primary" onClick={showModal}>
+                  <PlusOutlined />
+                  Register Bloom ID
+      </CardButton>
+      </Card>
+      </Col>
+      <Modal
+            title="Scan the QR Code on your Bloom App to Verify your DID"
+            visible={visible}
+            onOk={handleCancel}
+            onCancel={handleCancel}
+      ><BloomQR> </BloomQR></Modal>
+      <Col span={24} sm={12} md={8} style={{ marginBottom: '2rem' }}>
+            <Card style={{ boxShadow: '1px 5px 15px 0px rgba(0,0,0,0.1)' }}>
+      
+      
+      <CollectionsPage/>
+      
+      
+      </Card>
+      </Col>
+      <Col span={24} sm={12} md={8} style={{ marginBottom: '2rem' }}>
+            <Card style={{ boxShadow: '1px 5px 15px 0px rgba(0,0,0,0.1)' }}>
+      <CardButton type="primary" onClick={handleLoan}>
+      <PlusOutlined />
+                  Take Loan
+      </CardButton>
+      </Card>
+      </Col>
+      </Row>
+    </>
+
   ) : (
     <div
       style={{

@@ -31,7 +31,7 @@ const Buyer = () => {
 
   const history = useHistory()
 
-  const { isLoggedIn, deposit, defaultAddress } = useRoot()
+  const { isLoggedIn, deposit, defaultAddress, lockCollateral } = useRoot()
 
   const [amountWei, setAmountWei] = useState(0)
   const [visible, setVisible] = useState(false)
@@ -48,7 +48,7 @@ const Buyer = () => {
 
   const handleOk = () => {
     console.log(defaultAddress, String(amountWei), 'flow0')
-    deposit(defaultAddress, String(amountWei), 'flow0')
+    lockCollateral(defaultAddress, String(amountWei), 'flow0')
   }
 
   const handleCancel = e => {
@@ -76,7 +76,7 @@ const Buyer = () => {
           <Col span={24} sm={12} md={8} style={{ marginBottom: '2rem' }}>
             <Card style={{ boxShadow: '1px 5px 15px 0px rgba(0,0,0,0.1)' }}>
               <div style={{ float: 'right', fontSize: '0.7rem' }}>
-                Invest via <strong>AAVE</strong>
+                Invest via <strong>Compound</strong>
               </div>
               <Statistic
                 title="Total Deposited"

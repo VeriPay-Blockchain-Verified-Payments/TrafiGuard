@@ -17,12 +17,12 @@ const initialRoot = {
   defaultAddress: localStorage.getItem('defaultAddress'),
   contractManager: new web3.eth.Contract(
     abi,
-    '0x535072c141bac4ad80323ebf9a25493119462b4a'
-  )
-  // depositManager: new web3.eth.Contract(
-  //   depositManagerABI,
-  //   '0xd52775456a2EE4F783d466C50214Ee15001f339D'
-  // ),
+    '0xF80f304b47A3386C970415bf0862dCc50C6F95AA'
+  ),
+  depositManager: new web3.eth.Contract(
+    depositManagerABI,
+    '0xd52775456a2EE4F783d466C50214Ee15001f339D'
+  ),
   // investmentManager: new web3.eth.Contract(
   //   investmentManagerABI,
   //   '0x8FB240A424A05CB6c68CAf54eF1B504c0E900603'
@@ -67,6 +67,13 @@ export default ({ children }) => {
 
   // window.web3 = web3
   // window.root = initialRoot
+  const lockCollateral = (address, amount) =>
+      initialRoot.contractManager.methods
+      .lockCollateral().send({from: address})
+  
+  const takeLoan = () => 
+      initialRoot.contractManager.mehhods
+      .takeLoan().send()
 
   const deposit = (address, amount, name) =>
     initialRoot.depositManager.methods
@@ -90,6 +97,8 @@ export default ({ children }) => {
         momsContracts: initialRoot.momsContracts,
         getBalance,
         deposit,
+        lockCollateral,
+        takeLoan
       }}
     >
       {children}

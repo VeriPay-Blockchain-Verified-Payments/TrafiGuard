@@ -86,14 +86,11 @@ const HeaderComponent = () => {
   return (
     <Header>
       <Logo to="/">
-        <div>VeriPay</div>
+        <div>TradeGuard</div>
         <span>Deposit, borrow, get insurance</span>
       </Logo>
 
       <Nav>
-        <NavHashLink smooth to="/#marketplace">
-          Marketplace
-        </NavHashLink>
         <NavLink to="/connect-wallet" className="hiddenOnSmall">
           {isLoggedIn()
             ? `Connected ${defaultAddress.substring(0, 6)}...`
