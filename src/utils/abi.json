@@ -1,72 +1,294 @@
 [{
-        "inputs": [],
-        "name": "batch_getRiskScore",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
         "inputs": [{
-                "internalType": "string",
-                "name": "tradeID",
-                "type": "string"
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
             },
             {
-                "internalType": "string",
-                "name": "loanAmount",
-                "type": "string"
-            },
-            {
-                "internalType": "string",
-                "name": "_poa",
-                "type": "string"
-            },
-            {
-                "internalType": "string",
-                "name": "_pod",
-                "type": "string"
-            },
-            {
-                "internalType": "string",
-                "name": "_loanDuration",
-                "type": "string"
-            },
-            {
-                "internalType": "string",
-                "name": "_mmsi",
-                "type": "string"
+                "internalType": "address",
+                "name": "spender",
+                "type": "address"
             }
         ],
-        "name": "batchcall_APIs",
-        "outputs": [],
-        "stateMutability": "nonpayable",
+        "name": "allowance",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "view",
         "type": "function"
     },
     {
         "inputs": [{
                 "internalType": "address",
-                "name": "_addressBOL",
+                "name": "spender",
                 "type": "address"
             },
             {
-                "internalType": "address",
-                "name": "_addressFIN",
-                "type": "address"
-            },
-            {
-                "internalType": "address",
-                "name": "_addressVSL",
-                "type": "address"
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
             }
         ],
-        "name": "setContractAddresses",
-        "outputs": [],
+        "name": "approve",
+        "outputs": [{
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+        }],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [{
+            "internalType": "address",
+            "name": "owner",
+            "type": "address"
+        }],
+        "name": "balanceOf",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [{
+            "internalType": "address",
+            "name": "owner",
+            "type": "address"
+        }],
+        "name": "balanceOfUnderlying",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [{
+            "internalType": "uint256",
+            "name": "borrowAmount",
+            "type": "uint256"
+        }],
+        "name": "borrow",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [{
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+        }],
+        "name": "borrowBalanceCurrent",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
         "stateMutability": "nonpayable",
         "type": "function"
     },
     {
         "inputs": [],
-        "name": "BOL_Reduction",
+        "name": "borrowRatePerBlock",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [{
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+        }],
+        "name": "getAccountSnapshot",
+        "outputs": [{
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getCash",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [{
+                "internalType": "address",
+                "name": "borrower",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "repayAmount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "contract CTokenInterface",
+                "name": "cTokenCollateral",
+                "type": "address"
+            }
+        ],
+        "name": "liquidateBorrow",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [{
+            "internalType": "uint256",
+            "name": "mintAmount",
+            "type": "uint256"
+        }],
+        "name": "mint",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [{
+            "internalType": "uint256",
+            "name": "redeemTokens",
+            "type": "uint256"
+        }],
+        "name": "redeem",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [{
+            "internalType": "uint256",
+            "name": "redeemAmount",
+            "type": "uint256"
+        }],
+        "name": "redeemUnderlying",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [{
+            "internalType": "uint256",
+            "name": "repayAmount",
+            "type": "uint256"
+        }],
+        "name": "repayBorrow",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [{
+                "internalType": "address",
+                "name": "borrower",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "repayAmount",
+                "type": "uint256"
+            }
+        ],
+        "name": "repayBorrowBehalf",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [{
+                "internalType": "address",
+                "name": "liquidator",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "borrower",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "seizeTokens",
+                "type": "uint256"
+            }
+        ],
+        "name": "seize",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "supplyRatePerBlock",
         "outputs": [{
             "internalType": "uint256",
             "name": "",
@@ -77,46 +299,60 @@
     },
     {
         "inputs": [],
-        "name": "FIN_Reduction",
+        "name": "totalBorrowsCurrent",
         "outputs": [{
             "internalType": "uint256",
             "name": "",
             "type": "uint256"
         }],
-        "stateMutability": "view",
+        "stateMutability": "nonpayable",
         "type": "function"
     },
     {
-        "inputs": [],
-        "name": "LoanRequest",
+        "inputs": [{
+                "internalType": "address",
+                "name": "dst",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "transfer",
         "outputs": [{
-            "internalType": "string",
+            "internalType": "bool",
             "name": "",
-            "type": "string"
+            "type": "bool"
         }],
-        "stateMutability": "view",
+        "stateMutability": "nonpayable",
         "type": "function"
     },
     {
-        "inputs": [],
-        "name": "riskScore",
+        "inputs": [{
+                "internalType": "address",
+                "name": "src",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "dst",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "transferFrom",
         "outputs": [{
-            "internalType": "uint256",
+            "internalType": "bool",
             "name": "",
-            "type": "uint256"
+            "type": "bool"
         }],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "VSL_Reduction",
-        "outputs": [{
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-        }],
-        "stateMutability": "view",
+        "stateMutability": "nonpayable",
         "type": "function"
     }
 ]
