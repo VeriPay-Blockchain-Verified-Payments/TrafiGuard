@@ -34,24 +34,24 @@ contract GenericChainlink is ChainlinkClient {
 
 
     address[] private oracles = [
-        0xAA1DC356dc4B18f30C347798FD5379F3D77ABC5b, // LinkPool @ Kovan
-        0x56dd6586DB0D08c6Ce7B2f2805af28616E082455  // Alpha Chain @ Kovan
+			0xAA1DC356dc4B18f30C347798FD5379F3D77ABC5b, // LinkPool @ Kovan
+			0x56dd6586DB0D08c6Ce7B2f2805af28616E082455  // Alpha Chain @ Kovan
     ];
 
     bytes32[] private getBytes32_jobIDs = [
-        bytes32("c128fbb0175442c8ba828040fdd1a25e"), // LinkPool @ Kovan
-        bytes32("b7285d4859da4b289c7861db971baf0a")  // Alpha Chain @ Kovan
+			bytes32("c128fbb0175442c8ba828040fdd1a25e"), // LinkPool @ Kovan
+			bytes32("b7285d4859da4b289c7861db971baf0a")  // Alpha Chain @ Kovan
     ];
 
     bytes32[] private getUint256_jobIDs = [
-        bytes32("b6602d14e4734c49a5e1ce19d45a4632"), // LinkPool @ Kovan
-        bytes32("c7dd72ca14b44f0c9b6cfcd4b7ec0a2c")  // Alpha Chain @ Kovan
+			bytes32("b6602d14e4734c49a5e1ce19d45a4632"), // LinkPool @ Kovan
+			bytes32("c7dd72ca14b44f0c9b6cfcd4b7ec0a2c")  // Alpha Chain @ Kovan
     ];
 
     bytes32[][] private jobIDss = [getBytes32_jobIDs, getUint256_jobIDs];
     address public destinationOracle;
     bytes32 public destinationjobIDs;
-    Chainlink.Request public request;
+    Chainlink.Request[3] public request;
     string public baseURL;
     function send_GET_URL(uint8 responseType, uint8 node, string memory protocol, string memory domainName, string memory path)
     public {
@@ -59,11 +59,10 @@ contract GenericChainlink is ChainlinkClient {
 		destinationjobIDs = jobIDss[responseType][node];
 		bytes4 selector = responseType == 0 ? this.fulfill_bytes32.selector : this.fulfill_uint256.selector;
     	Chainlink.Request memory _request = buildChainlinkRequest(destinationjobIDs, address(this), selector);
-        baseURL = protocol.concat("://").concat(domainName);
-    	_request.add("get", baseURL);
-        _request.add("extPath", path);
-        _request.add("path", "message");
-    	request = _request;
+			baseURL = protocol.concat("://").concat(domainName);
+    	request[0] = _request.add("get", baseURL);
+			request[1] = _request.add("extPath", path);
+			request[2] = _request.add("path", "message");
     	sendChainlinkRequestTo(destinationOracle, _request, fee);
     }
 
@@ -93,6 +92,6 @@ library stringFunctions {
 
     function concat(string calldata word1, string calldata word2)
     external pure returns (string memory) {
-        return string(abi.encodePacked(word1,word2));
+			return string(abi.encodePacked(word1,word2));
     }
 }
