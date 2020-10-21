@@ -8,7 +8,7 @@ pragma solidity ^0.6.12;
 /// Compound-Addresses on Kovan:
 /// https://github.com/compound-finance/compound-protocol/blob/master/networks/kovan.json
 
-/// Deployed contract: https://kovan.etherscan.io/address/0xf80f304b47a3386c970415bf0862dcc50c6f95aa#code
+/// For examples see deployed smart contract: https://kovan.etherscan.io/address/0x9886a3eafa2e1271b3c9e391e665d2e4c3631965
 
 interface IERC20 {
     function totalSupply() external view returns (uint256);
@@ -158,8 +158,10 @@ contract ShipmentCollateralHandling {
         cDAI = CTokenInterface(_cDAI);
         comptroller = ComptrollerInterface(_comptroller);
     }
+    
+    function giveMeETH() public payable {}
 
-    function lockCollateral() external {  /// for buyer to lock invested amount, e.g. 10,000 USDC (example - adjust to UI later)
+    function lockCollateral() external payable {  /// for buyer to lock invested amount, e.g. 10,000 USDC (example - adjust to UI later)
         USDC.approve(address(cUSDC), 10000); /// Amount has 6 decimals: 000000, meaning 10000 = 0.010000 USDC
         cUSDC.mint(10000);
         address[] memory colls = new address[](1);
@@ -169,7 +171,6 @@ contract ShipmentCollateralHandling {
 
     function takeOutLoan() external { // for seller to take out allowance
         cDAI.borrow(2000); /// Collateral-Factor to be considered! 20% of loan > 1.5 ratio
-        /// use or multiply with > batch_getRiskScore()
     }
 
     function repayLoan() external {
@@ -180,7 +181,6 @@ contract ShipmentCollateralHandling {
     function redeemCollateral() external {
         uint balancePlusInterest = cUSDC.balanceOf(address(this));
         cUSDC.redeem(balancePlusInterest);  /// what happens with the interest? > Should stay in contract, which is {balance - 10000}
-        /// next step: send investment back to buyer
-        /// ideally send back 10000 USDC
+         /// next step: send investment back to buyer
     }
 }
