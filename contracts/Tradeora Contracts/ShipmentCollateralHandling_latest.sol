@@ -8,6 +8,8 @@ pragma solidity ^0.6.12;
 /// Compound-Addresses on Kovan:
 /// https://github.com/compound-finance/compound-protocol/blob/master/networks/kovan.json
 
+/// Deployed contract: https://kovan.etherscan.io/address/0xf80f304b47a3386c970415bf0862dcc50c6f95aa#code
+
 interface IERC20 {
     function totalSupply() external view returns (uint256);
     function balanceOf(address account) external view returns (uint256);
@@ -167,6 +169,7 @@ contract ShipmentCollateralHandling {
 
     function takeOutLoan() external { // for seller to take out allowance
         cDAI.borrow(2000); /// Collateral-Factor to be considered! 20% of loan > 1.5 ratio
+        /// use or multiply with > batch_getRiskScore()
     }
 
     function repayLoan() external {
@@ -177,6 +180,7 @@ contract ShipmentCollateralHandling {
     function redeemCollateral() external {
         uint balancePlusInterest = cUSDC.balanceOf(address(this));
         cUSDC.redeem(balancePlusInterest);  /// what happens with the interest? > Should stay in contract, which is {balance - 10000}
-         /// next step: send investment back to buyer
+        /// next step: send investment back to buyer
+        /// ideally send back 10000 USDC
     }
 }
