@@ -45,7 +45,7 @@ contract Underwriting{
         riskScore = 100;
         LoanRequest = loanAmount;
         Financials FIN = Financials(FINAddress);
-        FIN.evalRiskScore(tradeID, loanAmount);
+        FIN.evalRiskScore();
     }
 
     //2. Call Bill of lading contract API
@@ -62,15 +62,15 @@ contract Underwriting{
 
 
     //4. Call Seller DID API
-    function call_requestSellerDIDRisk() internal returns( string memory phone, string memory email ){
+    function call_requestSellerDIDRisk(string memory _email, string memory _phone) internal returns( string memory phone, string memory email ){
         SellerDID sellerDID = SellerDID(SellerDIDAddress);
-        sellerDID.evalRiskScore();
+        sellerDID.evalRiskScore(_email, _phone);
     }
 
 
     function getRiskReductionFIN() internal returns(uint256){
         Financials FIN = Financials(FINAddress);
-        FIN_Reduction = FIN.riskScore();
+        FIN_Reduction = FIN.riskReduction();
         riskScore = riskScore - FIN_Reduction;
     }
 
@@ -101,3 +101,4 @@ contract Underwriting{
         getRiskReductionVSL();
 
     }
+}

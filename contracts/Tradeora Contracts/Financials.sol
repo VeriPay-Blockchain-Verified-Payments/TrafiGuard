@@ -1,10 +1,10 @@
 pragma solidity ^0.6.0;
 
-import "@chainlink/contracts/src/v0./src/v0.6/ChainlinkClient.sol";
+import "@chainlink/contracts/src/v0.6/ChainlinkClient.sol";
 
 contract Financials is ChainlinkClient {
 
-	string public riskScore;
+	uint256 public riskReduction;
 
 	address private oracle;
 	bytes32 private jobId;
@@ -16,7 +16,7 @@ contract Financials is ChainlinkClient {
 	constructor() public {
 		setPublicChainlinkToken();
 		oracle = 0x56dd6586DB0D08c6Ce7B2f2805af28616E082455;
-		jobId = "c128fbb0175442c8ba828040fdd1a25e";
+		jobId = "b6602d14e4734c49a5e1ce19d45a4632";
 		fee = 0.1 * 10 ** 18; // 0.1 LINK
 	}
 
@@ -52,10 +52,10 @@ contract Financials is ChainlinkClient {
 			return string(bytesArray);
 	}
 
-	function fulfill(bytes32 _requestId, bytes32 _returnData)
+	function fulfill(bytes32 _requestId, uint256 _returnData)
 	public recordChainlinkFulfillment(_requestId)
 	{
-			riskScore = bytes32ToString(_returnData);
+			riskReduction = _returnData;
 	}
 
 }
@@ -185,5 +185,3 @@ contract Financials is ChainlinkClient {
 //     }//
 
 // }
-
- */

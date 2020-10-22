@@ -1,6 +1,6 @@
 pragma solidity ^0.6.12;
 
-import 'https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol';
+import '@openzeppelin/contracts//token/ERC20/IERC20.sol';
 import './CompoundControllerInterface.sol';
 import './CTokenInterface.sol';
 
@@ -36,7 +36,7 @@ contract ShipmentCollateralHandling {
         comptroller.enterMarkets(colls);
     }
 
-    function takeOutLoan() internal { // for seller to take out allowance    
+    function takeOutLoan() internal { // for seller to take out allowance
         cDAI.borrow(2000); /// Collateral-Factor to be considered! 20% of loan > 1.5 ratio
     }
 

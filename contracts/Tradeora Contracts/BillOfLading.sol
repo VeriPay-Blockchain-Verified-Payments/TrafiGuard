@@ -1,6 +1,6 @@
 pragma solidity ^0.6.0;
 
-import "@chainlink/contracts/src/v0./src/v0.6/ChainlinkClient.sol";
+import "@chainlink/contracts/src/v0.6/ChainlinkClient.sol";
 
 
 /// SPDX-License-Identifier: MIT

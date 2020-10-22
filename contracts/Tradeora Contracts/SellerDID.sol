@@ -1,7 +1,7 @@
 pragma solidity ^0.6.0;
 pragma experimental ABIEncoderV2;
 
-import "@chainlink/contracts/src/v0./src/v0.6/ChainlinkClient.sol";
+import "@chainlink/contracts/src/v0.6/ChainlinkClient.sol";
 
 /// SPDX-License-Identifier: MIT
 // Deployed on: Kovan at: 0x71Bf3281b35AEf03a4a89b660E9666B24c8090d0
@@ -26,21 +26,21 @@ contract SellerDID is ChainlinkClient {
     constructor()
     public {
     	setPublicChainlinkToken();
-		oracle = 0xAA1DC356dc4B18f30C347798FD5379F3D77ABC5b;
-		jobId = "b7285d4859da4b289c7861db971baf0a";
+			oracle = 0xAA1DC356dc4B18f30C347798FD5379F3D77ABC5b;
+			jobId = "b7285d4859da4b289c7861db971baf0a";
     }
 
     function evalRiskScore(string memory _email, string memory _phone)
     public {
-		riskReduction = keccak256(abi.encodePacked(email)) == keccak256(abi.encodePacked(_email)) ? riskReduction+8 : riskReduction;
-		riskReduction = keccak256(abi.encodePacked(phone)) == keccak256(abi.encodePacked(_phone)) ? riskReduction+11 : riskReduction;
+			riskReduction = keccak256(abi.encodePacked(email)) == keccak256(abi.encodePacked(_email)) ? riskReduction+8 : riskReduction;
+			riskReduction = keccak256(abi.encodePacked(phone)) == keccak256(abi.encodePacked(_phone)) ? riskReduction+11 : riskReduction;
     }
 
     function set(string memory _email, string memory _phone)
     public {
-		email = _email;
-		phone = _phone;
-		//"{".concat(email).concat(",").concat(phone).concat("}");
+			email = _email;
+			phone = _phone;
+			//"{".concat(email).concat(",").concat(phone).concat("}");
     }
 }
 
