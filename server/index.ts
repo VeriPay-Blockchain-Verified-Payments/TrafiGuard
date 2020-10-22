@@ -12,7 +12,11 @@ if (!port) {
 
 const Web3 = require('web3');
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-let provider = new HDWalletProvider([process.env.ROPSTEN_PRIVATEKEY], "http://localhost:8545");
+let provider = new HDWalletProvider(
+	[process.env.ROPSTEN_PRIVATEKEY],
+	"http://localhost:8545",
+	0, 1
+);
 const web3 = new Web3(provider)
 console.log(web3)
 
@@ -60,11 +64,11 @@ app.post(
 			}
 			const emailStr = Extractors.extractBase(email, 'email', 'email')
 
-			let accounts = web3.eth.getAccounts()
+			let accounts = await web3.eth.getAccounts()
 			console.log(accounts)
 
-			const _StoreBloomData = web3.eth.contract(StoreBloomData, StoreBloomData.networks["3"].address)
-			let txReceipt = _StoreBloomData.setData('1234', emailStr, '5566778899', { from: accounts[3] })
+			const _StoreBloomData = await web3.eth.contract(StoreBloomData, StoreBloomData.networks["3"].address)
+			let txReceipt = await _StoreBloomData.setData('1234', emailStr, '5566778899', { from: accounts[3] })
 			console.log(txReceipt);
 
 			return res.status(200).json({
