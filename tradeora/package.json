@@ -1,0 +1,16 @@
+{
+  "name": "tradeora",
+  "version": "1.0.0",
+  "description": "mock APIs to test TrafiGuard",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "carlos.escom.ipn@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
