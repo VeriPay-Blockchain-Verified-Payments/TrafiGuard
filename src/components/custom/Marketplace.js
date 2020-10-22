@@ -25,8 +25,9 @@ const CardButton = styled(Button)`
 `
 
 const Marketplace = () => {
-  const flows = [
-		{ deposited: 0.3, intereset: 2.5, fee: 12124, developedBy: 'CF Team' },
+	const flows = [
+		{ _poa: 'Mumbai', _pod: 'Antofagasta', _loanDuration: 30, _mmsi: 241312000 },
+		{ _poa: 'Mumbai', _pod: 'Manzanillo', _loanDuration: 30, _mmsi: 241312000 },
 		{ _poa: 'Mumbai', _pod: 'NewYork', _loanDuration: 30, _mmsi: 241312000 },
   ]
 

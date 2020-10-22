@@ -56,7 +56,6 @@ contract LinkPoolClient is ChainlinkClient {
    }
 
    function fulfill(bytes32 _requestId, uint256 response)
-
    public {
        // riskScore_from[_requestId] = response;
        reqId = _requestId;
