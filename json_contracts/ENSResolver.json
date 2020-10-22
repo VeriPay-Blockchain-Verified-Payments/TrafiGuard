@@ -33,15 +33,15 @@
     "absolutePath": "@chainlink/contracts/src/v0.6/vendor/ENSResolver.sol",
     "exportedSymbols": {
       "ENSResolver": [
-        4592
+        4625
       ]
     },
-    "id": 4593,
+    "id": 4626,
     "license": null,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4584,
+        "id": 4617,
         "literals": [
           "solidity",
           "^",
@@ -49,7 +49,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:20"
+        "src": "0:23:21"
       },
       {
         "abstract": true,
@@ -58,9 +58,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 4592,
+        "id": 4625,
         "linearizedBaseContracts": [
-          4592
+          4625
         ],
         "name": "ENSResolver",
         "nodeType": "ContractDefinition",
@@ -69,7 +69,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "3b3b57de",
-            "id": 4591,
+            "id": 4624,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -77,18 +77,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 4587,
+              "id": 4620,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4586,
+                  "id": 4619,
                   "mutability": "mutable",
                   "name": "node",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 4591,
-                  "src": "73:12:20",
+                  "scope": 4624,
+                  "src": "73:12:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -96,10 +96,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 4585,
+                    "id": 4618,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "73:7:20",
+                    "src": "73:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -109,21 +109,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "72:14:20"
+              "src": "72:14:21"
             },
             "returnParameters": {
-              "id": 4590,
+              "id": 4623,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4589,
+                  "id": 4622,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 4591,
-                  "src": "116:7:20",
+                  "scope": 4624,
+                  "src": "116:7:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -131,10 +131,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4588,
+                    "id": 4621,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "116:7:20",
+                    "src": "116:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -145,34 +145,34 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "115:9:20"
+              "src": "115:9:21"
             },
-            "scope": 4592,
-            "src": "59:66:20",
+            "scope": 4625,
+            "src": "59:66:21",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           }
         ],
-        "scope": 4593,
-        "src": "25:102:20"
+        "scope": 4626,
+        "src": "25:102:21"
       }
     ],
-    "src": "0:128:20"
+    "src": "0:128:21"
   },
   "legacyAST": {
     "absolutePath": "@chainlink/contracts/src/v0.6/vendor/ENSResolver.sol",
     "exportedSymbols": {
       "ENSResolver": [
-        4592
+        4625
       ]
     },
-    "id": 4593,
+    "id": 4626,
     "license": null,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4584,
+        "id": 4617,
         "literals": [
           "solidity",
           "^",
@@ -180,7 +180,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:20"
+        "src": "0:23:21"
       },
       {
         "abstract": true,
@@ -189,9 +189,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 4592,
+        "id": 4625,
         "linearizedBaseContracts": [
-          4592
+          4625
         ],
         "name": "ENSResolver",
         "nodeType": "ContractDefinition",
@@ -200,7 +200,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "3b3b57de",
-            "id": 4591,
+            "id": 4624,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -208,18 +208,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 4587,
+              "id": 4620,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4586,
+                  "id": 4619,
                   "mutability": "mutable",
                   "name": "node",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 4591,
-                  "src": "73:12:20",
+                  "scope": 4624,
+                  "src": "73:12:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -227,10 +227,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 4585,
+                    "id": 4618,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "73:7:20",
+                    "src": "73:7:21",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -240,21 +240,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "72:14:20"
+              "src": "72:14:21"
             },
             "returnParameters": {
-              "id": 4590,
+              "id": 4623,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4589,
+                  "id": 4622,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 4591,
-                  "src": "116:7:20",
+                  "scope": 4624,
+                  "src": "116:7:21",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -262,10 +262,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 4588,
+                    "id": 4621,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "116:7:20",
+                    "src": "116:7:21",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -276,20 +276,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "115:9:20"
+              "src": "115:9:21"
             },
-            "scope": 4592,
-            "src": "59:66:20",
+            "scope": 4625,
+            "src": "59:66:21",
             "stateMutability": "view",
             "virtual": true,
             "visibility": "public"
           }
         ],
-        "scope": 4593,
-        "src": "25:102:20"
+        "scope": 4626,
+        "src": "25:102:21"
       }
     ],
-    "src": "0:128:20"
+    "src": "0:128:21"
   },
   "compiler": {
     "name": "solc",
@@ -297,7 +297,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-22T05:13:09.578Z",
+  "updatedAt": "2020-10-22T05:34:41.570Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
