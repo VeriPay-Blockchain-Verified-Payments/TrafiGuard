@@ -18,11 +18,11 @@ const initialRoot = {
   defaultAddress: localStorage.getItem('defaultAddress'),
 	collateralHandling: new web3.eth.Contract(
     ShipmentCollateralHandling_allinone,
-    '0x0237768c0648DC9bC6bB1D9D30A3b1113DacfD7c'
+    '0xaE37c786Ad2883EBED43132295c8bc41fA98f912'
   ),
   underwriting: new web3.eth.Contract(
     Underwriting,
-    '0x83cC97b5472E565fe26408BDF2F6F6C346C10397'
+    '0xEf5BD435806Be2663112a60Be1264576Ae980c73'
   ),
   // investmentManager: new web3.eth.Contract(
   //   investmentManagerABI,
