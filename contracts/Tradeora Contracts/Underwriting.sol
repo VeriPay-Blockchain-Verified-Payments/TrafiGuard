@@ -1,5 +1,5 @@
 
-pragma solidity ^0.6.12;
+pragma solidity ^0.6.6;
 
 import "./BillOfLading.sol";
 import "./Financials.sol";
@@ -85,7 +85,7 @@ contract Underwriting{
         VSL_Reduction = VSL.riskReduction();
         riskScore = riskScore - VSL_Reduction;
     }
-    
+
     function getRiskReductionSellerDID() internal returns (uint256){
         SellerDID sellerDID = SellerDID(SellerDIDAddress);
         SellerDID_Reduction = sellerDID.riskReduction();

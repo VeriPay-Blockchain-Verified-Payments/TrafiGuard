@@ -1,4 +1,4 @@
-pragma solidity ^0.6.12;
+pragma solidity ^0.6.6;
 
 /// SPDX-License-Identifier: MIT
 
@@ -158,7 +158,7 @@ contract ShipmentCollateralHandling {
         cDAI = CTokenInterface(_cDAI);
         comptroller = ComptrollerInterface(_comptroller);
     }
-    
+
     function giveMeETH() public payable {}
 
     function lockCollateral() external payable {  /// for buyer to lock invested amount, e.g. 10,000 USDC (example - adjust to UI later)

@@ -3,91 +3,108 @@
 4_Underwriting.js
 =================
 
-   Deploying 'BillOfLading'
+   Replacing 'BillOfLading'
    ------------------------
-   - transaction hash:    0x4334d252169b98fc4d502bc22a8ab1194193b2ab22ffc6cceac80b97db6bb739
-   - Blocks: 0            Seconds: 0
-   - contract address:    0x7b747234DB0765910b6D8DbACDa62aCd1C764cF0
-   - block number:        21654340
-   - block timestamp:     1603346932
+   - transaction hash:    0xc8925f7d3aec89066248588f8fc16320f1d5d9a1d6172a4cb45adcc12a7b400d
+   - Blocks: 1            Seconds: 8
+   - contract address:    0x2fBC58A5B4763b8CDa165353Ef4d8f777C23Ed09
+   - block number:        21664099
+   - block timestamp:     1603397640
    - account:             0xBA5133C0FEE0C006A9A5328fA064A6b7E7778011
-   - balance:             0.7213626192
-   - gas used:            920396 (0xe0b4c)
+   - balance:             0.4936669592
+   - gas used:            947206 (0xe7406)
    - gas price:           20 gwei
    - value sent:          0 ETH
-   - total cost:          0.01840792 ETH
+   - total cost:          0.01894412 ETH
 
 
-   Deploying 'Financials'
+   Replacing 'Financials'
    ----------------------
-   - transaction hash:    0x93ccd9c1fac1874f84a8a44e40416050347ad926e368001949833653f0718088
-   - Blocks: 1            Seconds: 4
-   - contract address:    0x0A390f82A3Fc86452c67773AF159E7e464AB24fa
-   - block number:        21654341
-   - block timestamp:     1603346940
+   - transaction hash:    0xe79b96c57e64c7fc433d7c31c3a7e9f600722e3a571a1df2aa9271e71710cdd2
+   - Blocks: 0            Seconds: 0
+   - contract address:    0xC6b6da08f393D483bBe26c6E3564Ce16F1f389C9
+   - block number:        21664100
+   - block timestamp:     1603397644
    - account:             0xBA5133C0FEE0C006A9A5328fA064A6b7E7778011
-   - balance:             0.7008043792
-   - gas used:            1027912 (0xfaf48)
+   - balance:             0.4711556992
+   - gas used:            1125563 (0x112cbb)
    - gas price:           20 gwei
    - value sent:          0 ETH
-   - total cost:          0.02055824 ETH
+   - total cost:          0.02251126 ETH
 
 
-   Deploying 'Vessels'
+   Replacing 'Vessels'
    -------------------
-   - transaction hash:    0x662b2a717c0e599c7c0cd08a530abd5b2bc44fe4db63069481f64226087ac571
-   - Blocks: 2            Seconds: 9
-   - contract address:    0xbbFeEd7d0E5aCb66324a747119DcB66B137221d3
-   - block number:        21654345
-   - block timestamp:     1603346960
+   - transaction hash:    0xd02c71b503e208fff6c1f8cd3000fdc5b8223c546a5eb70b70c6ab230badd53e
+   - Blocks: 1            Seconds: 4
+   - contract address:    0x73DA39E8fe1bA9BCc0cF54dd427D766dB832528D
+   - block number:        21664102
+   - block timestamp:     1603397652
    - account:             0xBA5133C0FEE0C006A9A5328fA064A6b7E7778011
-   - balance:             0.6671970792
+   - balance:             0.4375483992
    - gas used:            1680365 (0x19a3ed)
    - gas price:           20 gwei
    - value sent:          0 ETH
    - total cost:          0.0336073 ETH
 
 
-   Deploying 'SellerDID'
+   Replacing 'SellerDID'
    ---------------------
-   - transaction hash:    0x9824e830a98deea89e2dfca4babd8cd95598ae802f2f1208ac0ef2f316d99cfb
-   - Blocks: 0            Seconds: 0
-   - contract address:    0xbDe159C19024AD199A3443580E9dE60D793FF76e
-   - block number:        21654347
-   - block timestamp:     1603346968
+   - transaction hash:    0x743a01ac977d515c317e9840c10a0fe427d7166f31ec29476686ef8390cb8afd
+   - Blocks: 0            Seconds: 4
+   - contract address:    0x4FeE060Fe46F6d74d2A61BaEfA5Ba798E1457AbF
+   - block number:        21664103
+   - block timestamp:     1603397660
    - account:             0xBA5133C0FEE0C006A9A5328fA064A6b7E7778011
-   - balance:             0.6559113592
-   - gas used:            564286 (0x89c3e)
+   - balance:             0.4262367592
+   - gas used:            565582 (0x8a14e)
    - gas price:           20 gwei
    - value sent:          0 ETH
-   - total cost:          0.01128572 ETH
+   - total cost:          0.01131164 ETH
 
 
-   Deploying 'Underwriting'
+   Replacing 'Underwriting'
    ------------------------
-   - transaction hash:    0xa5d90921627b889f218584a048afd784645a6d5e0c7e52975e1f578a61160432
-   - Blocks: 0            Seconds: 5
-   - contract address:    0x1Ffc2f92952b9455845d2F4640143E59F88F349e
-   - block number:        21654349
-   - block timestamp:     1603346980
+   - transaction hash:    0x9d761b9e116a496ffc7500e6640c80f009ed8b88bf3b81f0610ea880267b22aa
+   - Blocks: 1            Seconds: 8
+   - contract address:    0xEf5BD435806Be2663112a60Be1264576Ae980c73
+   - block number:        21664105
+   - block timestamp:     1603397672
    - account:             0xBA5133C0FEE0C006A9A5328fA064A6b7E7778011
-   - balance:             0.6379034992
-   - gas used:            900393 (0xdbd29)
+   - balance:             0.4032957992
+   - gas used:            1147048 (0x1180a8)
    - gas price:           20 gwei
    - value sent:          0 ETH
-   - total cost:          0.01800786 ETH
+   - total cost:          0.02294096 ETH
+
+6_ShipmentCollateralHandling.js
+===============================
+
+   Replacing 'ShipmentCollateralHandling'
+   --------------------------------------
+   - transaction hash:    0xd50c3178171765e90483a2d57dacd45d9f3adeee42df9432d414904c628b56c2
+   - Blocks: 0            Seconds: 8
+   - contract address:    0xaE37c786Ad2883EBED43132295c8bc41fA98f912
+   - block number:        21663955
+   - block timestamp:     1603396900
+   - account:             0xBA5133C0FEE0C006A9A5328fA064A6b7E7778011
+   - balance:             0.5126110792
+   - gas used:            180100 (0x2bf84)
+   - gas price:           20 gwei
+   - value sent:          0 ETH
+   - total cost:          0.003602 ETH
 
    - Saving artifacts
    -------------------------------------
-   - Total cost:          0.10186704 ETH
+   - Total cost:            0.003602 ETH
 
 
 Summary
 =======
-- Total deployments:   5g
-- Final cost:          0.10186704 ETH
+- Total deployments:   1
+- Final cost:          0.003602 ETH
 
-===
+======
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

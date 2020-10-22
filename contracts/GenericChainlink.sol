@@ -1,7 +1,9 @@
 pragma solidity ^0.6.6;
 pragma experimental ABIEncoderV2;
 
-import "https://github.com/smartcontractkit/chainlink/evm-contracts/src/v0.6/ChainlinkClient.sol";
+import "./lib/StringFunctions.sol";
+import "@chainlink/contracts/src/v0.6/ChainlinkClient.sol";
+//import "https://github.com/smartcontractkit/chainlink/evm-contracts/src/v0.6/ChainlinkClient.sol";
 
 contract GenericChainlink is ChainlinkClient {
 
@@ -19,8 +21,7 @@ contract GenericChainlink is ChainlinkClient {
      *      Fee:            0.1 LINK
      */
 
-    using stringFunctions for string;
-    using CBORChainlink for BufferChainlink.buffer;
+    using StringFunctions for string;
 
     uint256 private constant fee = 0.1 * 10 ** 18; // 0.1 LINK
 
@@ -51,7 +52,6 @@ contract GenericChainlink is ChainlinkClient {
     bytes32[][] private jobIDss = [getBytes32_jobIDs, getUint256_jobIDs];
     address public destinationOracle;
     bytes32 public destinationjobIDs;
-    Chainlink.Request[3] public request;
     string public baseURL;
     function send_GET_URL(uint8 responseType, uint8 node, string memory protocol, string memory domainName, string memory path)
     public {
@@ -60,9 +60,9 @@ contract GenericChainlink is ChainlinkClient {
 		bytes4 selector = responseType == 0 ? this.fulfill_bytes32.selector : this.fulfill_uint256.selector;
     	Chainlink.Request memory _request = buildChainlinkRequest(destinationjobIDs, address(this), selector);
 			baseURL = protocol.concat("://").concat(domainName);
-    	request[0] = _request.add("get", baseURL);
-			request[1] = _request.add("extPath", path);
-			request[2] = _request.add("path", "message");
+    	_request.add("get", baseURL);
+			_request.add("extPath", path);
+			_request.add("path", "message");
     	sendChainlinkRequestTo(destinationOracle, _request, fee);
     }
 
