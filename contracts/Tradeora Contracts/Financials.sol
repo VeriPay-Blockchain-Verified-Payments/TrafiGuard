@@ -26,7 +26,7 @@ contract Financials is ChainlinkClient {
 		* Create a Chainlink request to retrieve API response, find the target data,
 		* At Path
 		*/
-	function evalRiskScore()
+	function evalRiskScore(string memory TradeID, string memory loanAmount)
 	public returns (bytes32 requestId)
 	{
 		Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfill.selector);
@@ -61,6 +61,15 @@ contract Financials is ChainlinkClient {
 	}
 
 }
+
+library stringFunctions {
+
+    function concat(string calldata word1, string calldata word2)
+    external pure returns (string memory) {
+			return string(abi.encodePacked(word1,word2));
+    }
+}
+
 // /*
 // contract AuditDateAPIConsumer is ChainlinkClient {
 

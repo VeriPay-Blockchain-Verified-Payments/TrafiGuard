@@ -45,7 +45,7 @@ contract Underwriting{
         riskScore = 100;
         LoanRequest = loanAmount;
         Financials FIN = Financials(FINAddress);
-        FIN.evalRiskScore();
+        FIN.evalRiskScore(tradeID, LoanRequest);
     }
 
     //2. Call Bill of lading contract API

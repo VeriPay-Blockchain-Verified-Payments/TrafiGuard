@@ -18,5 +18,6 @@ module.exports = async function (deployer) {
 	await deployer.deploy(SellerDID).then((SellerDID) => {
 		SellerDID_address = SellerDID.address
 	});
-	await deployer.deploy(Underwriting, BillOfLading_address, Financials_address, Vessels_address, SellerDID_address)
+	let Underwriting_deployed = await deployer.deploy(Underwriting)
+	await Underwriting_deployed.setContractAddresses(BillOfLading_address, Financials_address, Vessels_address, SellerDID_address)
 };

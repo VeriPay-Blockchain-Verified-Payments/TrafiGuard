@@ -17,25 +17,18 @@ contract BillOfLading is ChainlinkClient {
 
 
     constructor() public {
-        setPublicChainlinkToken();
-        oracle = 0xAA1DC356dc4B18f30C347798FD5379F3D77ABC5b;
-        jobId = "6b9b1ba2cefa4092b6d01c72624c201f";
-        fee = 0.1 * 10 ** 18; // 0.1 LINK
+			setPublicChainlinkToken();
+			oracle = 0xAA1DC356dc4B18f30C347798FD5379F3D77ABC5b;
+			jobId = "6b9b1ba2cefa4092b6d01c72624c201f";
+			fee = 0.1 * 10 ** 18; // 0.1 LINK
     }
 
 
     function requestBillOfLading() public returns (bytes32 requestId)
     {
         Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfill.selector);
-
-        // Set the URL to perform the GET request on
         request.add("post", "http://payid.trade:4000/verify/billOfLading");
-
-        // Set the path to find the desired data in the API response, where the response format is:
         request.add("path", "isValid");
-
-
-        // Sends the request
         return sendChainlinkRequestTo(oracle, request, fee);
     }
 
