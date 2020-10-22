@@ -17,7 +17,7 @@ const initialRoot = {
   defaultAddress: localStorage.getItem('defaultAddress'),
   contractManager: new web3.eth.Contract(
     abi,
-    '0xF80f304b47A3386C970415bf0862dCc50C6F95AA'
+    '0x9886A3eAfa2E1271B3C9e391E665d2e4C3631965'
   ),
   depositManager: new web3.eth.Contract(
     depositManagerABI,

@@ -16,7 +16,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   return (
     <Modal
       visible={visible}
-      title="Create a new collection"
+      title="Input the information to get risk reduction"
       okText="Create"
       cancelText="Cancel"
       onCancel={onCancel}

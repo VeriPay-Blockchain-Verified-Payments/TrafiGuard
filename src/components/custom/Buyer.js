@@ -68,10 +68,11 @@ const Buyer = () => {
           maxWidth: '600px',
         }}
       >
-        Here you can find different investment VeriPays. Choose any one and
-        start earning by clicking the “Deposit” button.
+        Pay for products globally with decentralized escrow to cover your purchase.
       </Paragraph>
       <Row gutter={24} style={{ padding: '2rem' }}>
+      <Col span={24} sm={12} md={8} style={{ marginBottom: '2rem' }}>
+      </Col>
         {flows.map(flow => (
           <Col span={24} sm={12} md={8} style={{ marginBottom: '2rem' }}>
             <Card style={{ boxShadow: '1px 5px 15px 0px rgba(0,0,0,0.1)' }}>
@@ -107,6 +108,7 @@ const Buyer = () => {
               </CardButton>
             </Card>
           </Col>
+          
         ))}
 
         <Modal

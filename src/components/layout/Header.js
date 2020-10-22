@@ -86,7 +86,7 @@ const HeaderComponent = () => {
   return (
     <Header>
       <Logo to="/">
-        <div>TradeGuard</div>
+        <div>TraFiGuard</div>
         <span>Deposit, borrow, get insurance</span>
       </Logo>
 
