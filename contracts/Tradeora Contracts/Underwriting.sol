@@ -85,13 +85,19 @@ contract Underwriting{
         VSL_Reduction = VSL.riskReduction();
         riskScore = riskScore - VSL_Reduction;
     }
+    
+    function getRiskReductionSellerDID() internal returns (uint256){
+        SellerDID sellerDID = SellerDID(SellerDIDAddress);
+        SellerDID_Reduction = sellerDID.riskReduction();
+        riskScore = riskScore - SellerDID_Reduction;
+    }
 
 
-    function batchcall_APIs(string memory tradeID, string memory loanAmount, string memory _poa, string memory _pod, string memory _loanDuration, string memory _mmsi) public{
+    function batchcall_APIs(string memory _email, string memory _phone, string memory tradeID, string memory loanAmount, string memory _poa, string memory _pod, string memory _loanDuration, string memory _mmsi) public{
         call_requestFinancialRiskReduction(tradeID, loanAmount);
         call_requestVesselRisk(_poa, _pod, _loanDuration, _mmsi);
         call_requestBillOfLading();
-
+        call_requestSellerDIDRisk(_email, _phone);
     }
 
     function batch_getRiskScore() public{
@@ -99,6 +105,6 @@ contract Underwriting{
         getRiskReductionFIN();
         getRiskReductionBOL();
         getRiskReductionVSL();
-
+        getRiskReductionSellerDID();
     }
 }

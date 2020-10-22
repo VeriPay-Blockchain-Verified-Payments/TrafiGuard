@@ -2,8 +2,9 @@ import React, { createContext, useContext, useState } from 'react'
 import * as _ from 'lodash'
 import Web3 from 'web3'
 
-import Underwriting from '../../json_contracts/Underwriting.json'
-import ShipmentCollateralHandling_allinone from '../../json_contracts/ShipmentCollateralHandling_allinone.json'
+import abi from '../utils/abi.json'
+import Underwriting from '../utils/json_contracts/Underwriting.json'
+import ShipmentCollateralHandling_allinone from '../utils/json_contracts/ShipmentCollateralHandling.json'
 // import investmentManagerABI from '../../investmentManagerABI.json'
 
 const web3 = new Web3()
