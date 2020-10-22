@@ -1,10 +1,12 @@
 pragma solidity ^0.6.0;
 
+import "../lib/StringFunctions.sol";
 import "@chainlink/contracts/src/v0.6/ChainlinkClient.sol";
 //import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
 
 
 contract Financials is ChainlinkClient {
+	using StringFunctions for string;
 
 	uint256 public riskReduction;
 
@@ -60,14 +62,6 @@ contract Financials is ChainlinkClient {
 			riskReduction = _returnData;
 	}
 
-}
-
-library stringFunctions {
-
-    function concat(string calldata word1, string calldata word2)
-    external pure returns (string memory) {
-			return string(abi.encodePacked(word1,word2));
-    }
 }
 
 // /*

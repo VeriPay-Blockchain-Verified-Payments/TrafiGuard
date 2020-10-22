@@ -87,11 +87,3 @@ contract GenericChainlink is ChainlinkClient {
 
 
 }
-
-library stringFunctions {
-
-    function concat(string calldata word1, string calldata word2)
-    external pure returns (string memory) {
-			return string(abi.encodePacked(word1,word2));
-    }
-}

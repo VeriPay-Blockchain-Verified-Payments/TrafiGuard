@@ -33,9 +33,9 @@ contract SellerDID is ChainlinkClient {
 
     function evalRiskScore(string memory _email, string memory _phone)
     public {
-            riskReduction = 0;
-			riskReduction = keccak256(abi.encodePacked(email)) == keccak256(abi.encodePacked(_email)) ? riskReduction+5 : riskReduction;
-			riskReduction = keccak256(abi.encodePacked(phone)) == keccak256(abi.encodePacked(_phone)) ? riskReduction+5 : riskReduction;
+			uint256 _riskReduction = 0;
+			_riskReduction = keccak256(abi.encodePacked(email)) == keccak256(abi.encodePacked(_email)) ? _riskReduction+8 : riskReduction;
+			riskReduction = keccak256(abi.encodePacked(phone)) == keccak256(abi.encodePacked(_phone)) ? _riskReduction+11 : riskReduction;
     }
 
     function set(string memory _email, string memory _phone)
@@ -46,10 +46,3 @@ contract SellerDID is ChainlinkClient {
     }
 }
 
-library stringFunctions {
-
-    function concat(string calldata word1, string calldata word2)
-    external pure returns (string memory) {
-			return string(abi.encodePacked(word1,word2));
-    }
-}
