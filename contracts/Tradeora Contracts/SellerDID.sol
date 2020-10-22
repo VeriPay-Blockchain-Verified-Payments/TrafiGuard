@@ -1,7 +1,7 @@
 pragma solidity ^0.6.0;
 pragma experimental ABIEncoderV2;
 
-import "@chainlink/contracts/src/v0.6/ChainlinkClient.sol";
+import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
 // import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
 
 /// SPDX-License-Identifier: MIT
@@ -33,8 +33,9 @@ contract SellerDID is ChainlinkClient {
 
     function evalRiskScore(string memory _email, string memory _phone)
     public {
-			riskReduction = keccak256(abi.encodePacked(email)) == keccak256(abi.encodePacked(_email)) ? riskReduction+8 : riskReduction;
-			riskReduction = keccak256(abi.encodePacked(phone)) == keccak256(abi.encodePacked(_phone)) ? riskReduction+11 : riskReduction;
+            riskReduction = 0;
+			riskReduction = keccak256(abi.encodePacked(email)) == keccak256(abi.encodePacked(_email)) ? riskReduction+5 : riskReduction;
+			riskReduction = keccak256(abi.encodePacked(phone)) == keccak256(abi.encodePacked(_phone)) ? riskReduction+5 : riskReduction;
     }
 
     function set(string memory _email, string memory _phone)
