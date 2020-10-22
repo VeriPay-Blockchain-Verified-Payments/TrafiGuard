@@ -13,7 +13,7 @@ import Seller from './Seller'
 const { TabPane } = AntTabs
 
 const Tabs = () => (
-  <AntTabs defaultActiveKey="2" id="marketplace" centered>
+  <AntTabs defaultActiveKey="1" id="marketplace" centered>
     <TabPane
       tab={
         <span>

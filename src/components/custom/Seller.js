@@ -78,7 +78,7 @@ const ActiveFlows = () => {
     setVisible(false)
   }
 
-  const { isLoggedIn, defaultAddress, takeOutLoan, repayLoan, redeemCollateral } = useRoot()
+  const { isLoggedIn, defaultAddress, takeOutLoan, repayLoan, redeemCollateral, batch_getRiskScore } = useRoot()
   
 
 
@@ -129,14 +129,6 @@ const ActiveFlows = () => {
       <CardButton type="primary" onClick={handleRepayLoan}>
       <PlusOutlined />
                   Repay Loan
-      </CardButton>
-      </Card>
-      </Col>
-      <Col span={24} sm={12} md={8} style={{ marginBottom: '2rem' }}>
-            <Card style={{ boxShadow: '1px 5px 15px 0px rgba(0,0,0,0.1)' }}>
-      <CardButton type="primary" onClick={handleRedeemCol}>
-      <PlusOutlined />
-                  Redeem Colateral
       </CardButton>
       </Card>
       </Col>

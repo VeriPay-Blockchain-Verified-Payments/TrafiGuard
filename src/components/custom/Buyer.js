@@ -26,7 +26,7 @@ const CardButton = styled(Button)`
 
 const Buyer = () => {
   const flows = [
-    { deposited: 10000, intereset: 2.5, fee: 12124, developedBy: 'TrafiGuard' },
+    { deposited: 100000, intereset: 2.5, fee: 12124, developedBy: 'TrafiGuard' },
   ]
 
   const history = useHistory()

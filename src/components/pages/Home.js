@@ -174,7 +174,7 @@ const Home = () => {
         </VideoLink>
       </Title>
 
-      <Row>
+      {/* <Row>
         <Col span={24} sm={12} md={6}>
           <Image
             src="/images/j5.svg"
@@ -215,7 +215,7 @@ const Home = () => {
             Earn and Withdraw
           </Paragraph>
         </Col>
-      </Row>
+      </Row> */}
 
       <Row
         style={{
@@ -227,12 +227,12 @@ const Home = () => {
         <Col spn={24} md={12}>
           <Title level={3}>
             Do business globally with&nbsp;
-            <PrimaryTitle>VeriPay</PrimaryTitle>
+            <PrimaryTitle>TraFiGuard</PrimaryTitle>
           </Title>
           <Row style={{ margin: '1.2rem 0' }}>
-            <Col span={8}>No hussle</Col>
-            <Col span={8}>No pain</Col>
-            <Col span={8}>Easy-peasy</Col>
+            <Col span={8}>Open Finance</Col>
+            <Col span={8}>Global Trading</Col>
+            <Col span={8}>Borderless Payments</Col>
           </Row>
           <ButtonsGroup>
             <VideoLink>
@@ -246,7 +246,7 @@ const Home = () => {
           </ButtonsGroup>
         </Col>
         <Col spn={24} md={12}>
-          <FooterImage src="/images/e3.svg" />
+          <FooterImage src="/images/e3.jpeg" />
         </Col>
       </Row>
     </>

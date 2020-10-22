@@ -87,7 +87,7 @@ const HeaderComponent = () => {
     <Header>
       <Logo to="/">
         <div>TraFiGuard</div>
-        <span>Deposit, borrow, get insurance</span>
+        <span>Supply Chain Trade Finance made Inclusive</span>
       </Logo>
 
       <Nav>
