@@ -1,9 +1,8 @@
 
-pragma solidity ^0.6.0;
+pragma solidity ^0.6.12;
 
-import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
 import "./BillOfLading.sol";
-import "./LinkPoolClient.sol";
+import "./Financials.sol";
 import "./Vessels.sol";
 import "./SellerDID.sol";
 
@@ -45,13 +44,13 @@ contract Underwriting{
     function call_requestFinancialRiskReduction(string memory tradeID, string memory loanAmount) internal{
         riskScore = 100;
         LoanRequest = loanAmount;
-        LinkPoolClient FIN = LinkPoolClient(FINAddress);
-        FIN.evalRiskScore(tradeID, loanAmount);
+        Financials FIN = Financials(FINAddress);
+        FIN.evalRiskScore();
     }
 
     //2. Call Bill of lading contract API
     function call_requestBillOfLading() internal returns(uint256){
-        BillOfLadingRequest BOL = BillOfLadingRequest(BOLAddress);
+        BillOfLading BOL = BillOfLading(BOLAddress);
         BOL.requestBillOfLading();
     }
 
@@ -63,20 +62,20 @@ contract Underwriting{
 
 
     //4. Call Seller DID API
-    function call_requestSellerDIDRisk() internal returns( string memory phone, string memory email ){
+    function call_requestSellerDIDRisk(string memory _email, string memory _phone) internal returns( string memory phone, string memory email ){
         SellerDID sellerDID = SellerDID(SellerDIDAddress);
-        sellerDID.evalRiskScore();
+        sellerDID.evalRiskScore(_email, _phone);
     }
 
 
     function getRiskReductionFIN() internal returns(uint256){
-        LinkPoolClient FIN = LinkPoolClient(FINAddress);
-        FIN_Reduction = FIN.riskScore();
+        Financials FIN = Financials(FINAddress);
+        FIN_Reduction = FIN.riskReduction();
         riskScore = riskScore - FIN_Reduction;
     }
 
     function getRiskReductionBOL() internal returns (uint256){
-        BillOfLadingRequest BOL = BillOfLadingRequest(BOLAddress);
+        BillOfLading BOL = BillOfLading(BOLAddress);
         BOL_Reduction = BOL.risk_reduction();
         riskScore = riskScore - BOL_Reduction;
     }
@@ -102,3 +101,4 @@ contract Underwriting{
         getRiskReductionVSL();
 
     }
+}

@@ -2,9 +2,9 @@ import React, { createContext, useContext, useState } from 'react'
 import * as _ from 'lodash'
 import Web3 from 'web3'
 
-import depositManagerABI from '../utils/depositManagerABI.json'
-import abi from '../utils/abi.json'
-// import investmentManagerABI from '../utils/investmentManagerABI.json'
+import Underwriting from '../../json_contracts/Underwriting.json'
+import ShipmentCollateralHandling_allinone from '../../json_contracts/ShipmentCollateralHandling_allinone.json'
+// import investmentManagerABI from '../../investmentManagerABI.json'
 
 const web3 = new Web3()
 
@@ -19,8 +19,12 @@ const initialRoot = {
     abi,
     '0x9886A3eAfa2E1271B3C9e391E665d2e4C3631965'
   ),
-  depositManager: new web3.eth.Contract(
-    depositManagerABI,
+	collateralHandling: new web3.eth.Contract(
+    ShipmentCollateralHandling_allinone,
+    '0xF80f304b47A3386C970415bf0862dCc50C6F95AA'
+  ),
+  underwriting: new web3.eth.Contract(
+    Underwriting,
     '0xd52775456a2EE4F783d466C50214Ee15001f339D'
   ),
   // investmentManager: new web3.eth.Contract(
@@ -67,21 +71,21 @@ export default ({ children }) => {
 
   // window.web3 = web3
   // window.root = initialRoot
-  const lockCollateral = (address, amount) =>
-      initialRoot.contractManager.methods
+  const lockCollateral = (address) =>
+      initialRoot.collateralHandling.methods
       .lockCollateral().send({from: address})
-  
-  const takeLoan = () => 
-      initialRoot.contractManager.mehhods
-      .takeLoan().send()
 
-  const deposit = (address, amount, name) =>
-    initialRoot.depositManager.methods
-	  .deposit(address, web3.utils.toWei(amount, 'ether'), name)
-      .send({
-        from: address,
-        value: web3.utils.toWei(amount, 'ether'),
-      })
+  const takeLoan = (address) =>
+      initialRoot.collateralHandling.methods
+			.takeLoan().send({ from: address })
+
+  // const deposit = (address, amount, name) =>
+  //   initialRoot.underwriting.methods
+	//   .deposit(address,  toWei(amount, 'ether'), name)
+  //     .send({
+  //       from: address,
+	// 			value: collateralHandling..toWei(amount, 'ether'),
+  //     })
 
   return (
     <RootContext.Provider
@@ -96,7 +100,7 @@ export default ({ children }) => {
         web3,
         momsContracts: initialRoot.momsContracts,
         getBalance,
-        deposit,
+        // deposit,
         lockCollateral,
         takeLoan
       }}

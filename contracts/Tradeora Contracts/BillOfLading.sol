@@ -1,14 +1,14 @@
 pragma solidity ^0.6.0;
 
-import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
+import "@chainlink/contracts/src/v0.6/ChainlinkClient.sol";
+// import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
 
 
 /// SPDX-License-Identifier: MIT
 
-contract BillOfLadingRequest is ChainlinkClient {
+contract BillOfLading is ChainlinkClient {
 
     bool public is_Valid;
-
     uint256 public risk_reduction;
 
     address private oracle;
@@ -29,7 +29,7 @@ contract BillOfLadingRequest is ChainlinkClient {
         Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfill.selector);
 
         // Set the URL to perform the GET request on
-        request.add("post", "http://ec2-3-83-110-40.compute-1.amazonaws.com:5000/verify/billOfLading");
+        request.add("post", "http://payid.trade:4000/verify/billOfLading");
 
         // Set the path to find the desired data in the API response, where the response format is:
         request.add("path", "isValid");

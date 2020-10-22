@@ -8,7 +8,7 @@ const Ganache_privateKey = process.env.GANACHE_PRIVATE_KEY;
 const Ropsten_privateKey = process.env.ROPSTEN_PRIVATE_KEY;
 
 module.exports = {
-  contracts_directory: './contracts',
+  contracts_directory: './contracts/Tradeora Contracts',
 
 	networks: {
 		ganache: {
@@ -41,12 +41,14 @@ module.exports = {
 			skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
 		},
 
-		// Useful for private networks
-		// private: {
-		// provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
-		// network_id: 2111,   // This network is yours, in the cloud.
-		// production: true    // Treats this network as if it was a public net. (default: false)
-		// }
+		kovan: {
+			provider: () => new HDWalletProvider([Ropsten_privateKey], `https://kovan.infura.io/v3/${infuraKey}`),
+			network_id: 42,       // Ropsten's id
+			gas: 5500000,        // Ropsten has a lower block limit than mainnet
+			confirmations: 0,    // # of confs to wait between deployments. (default: 0)
+			timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+			skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+		},
 	},
 
 	// Set default mocha options here, use special reporters etc.
@@ -57,7 +59,7 @@ module.exports = {
 	// Configure your compilers
 	compilers: {
 		solc: {
-		version: "0.6.6",    // Fetch exact version from solc-bin (default: truffle's version)
+		version: "0.6.12",    // Fetch exact version from solc-bin (default: truffle's version)
 		docker: false,        // Use "0.5.1" you've installed locally with docker (default: false)
 		settings: {          // See the solidity docs for advice about optimization and evmVersion
 		optimizer: {

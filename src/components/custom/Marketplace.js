@@ -26,12 +26,13 @@ const CardButton = styled(Button)`
 
 const Marketplace = () => {
   const flows = [
-    { deposited: 0.3, intereset: 2.5, fee: 12124, developedBy: 'CF Team' },
+		{ deposited: 0.3, intereset: 2.5, fee: 12124, developedBy: 'CF Team' },
+		{ _poa: 'Mumbai', _pod: 'NewYork', _loanDuration: 30, _mmsi: 241312000 },
   ]
 
   const history = useHistory()
 
-  const { isLoggedIn, deposit, defaultAddress } = useRoot()
+  const { isLoggedIn, lockCollateral, takeLoan, defaultAddress } = useRoot()
 
   const [amountWei, setAmountWei] = useState(0)
   const [visible, setVisible] = useState(false)
@@ -46,8 +47,8 @@ const Marketplace = () => {
   }
 
   const handleOk = () => {
-    console.log(defaultAddress, String(amountWei), 'flow0')
-    deposit(defaultAddress, String(amountWei), 'flow0')
+    console.log(defaultAddress)
+    lockCollateral(defaultAddress)
   }
 
   const handleCancel = e => {
@@ -67,8 +68,7 @@ const Marketplace = () => {
           maxWidth: '600px',
         }}
       >
-        Here you can find different investment VeriPays. Choose any one and
-        start earning by clicking the “Deposit” button.
+        Lock Collateral to secure your shimpment.
       </Paragraph>
       <Row gutter={24} style={{ padding: '2rem' }}>
         {flows.map(flow => (
@@ -76,19 +76,31 @@ const Marketplace = () => {
             <Card style={{ boxShadow: '1px 5px 15px 0px rgba(0,0,0,0.1)' }}>
               <div style={{ float: 'right', fontSize: '0.7rem' }}>
                 Invest via <strong>AAVE</strong>
-              </div>
+							</div>
+							<Statistic
+								title="Port of origin"
+								value={flow._poa}
+								precision={2}
+								suffix="%"
+							/>
+							<Statistic
+								title="Port of Desination"
+								value={flow.intereset}
+								precision={2}
+								suffix="%"
+							/>
               <Statistic
-                title="Total Deposited"
-                value={flow.deposited}
+                title="Loan Amount"
+                value={flow.loanAmount}
                 precision={2}
-                suffix="ETH"
-              />
-              <Statistic
-                title="Annual Interest Rate"
-                value={flow.intereset}
-                precision={2}
-                suffix="%"
-              />
+                suffix="DAI"
+							/>
+							<Statistic
+								title="At Annual Interest Rate"
+								value={flow.intereset}
+								precision={2}
+								suffix="%"
+							/>
               <Statistic title="Fee" value={flow.fee} precision={2} />
               <Statistic
                 title="Developed By"
@@ -98,7 +110,7 @@ const Marketplace = () => {
 
               <CardButton type="primary" onClick={showModal}>
                 <PlusOutlined />
-                Deposit
+                TakeLoan
               </CardButton>
               <CardButton type="default">
                 <EyeOutlined />
@@ -119,16 +131,36 @@ const Marketplace = () => {
                 minHeight: '400px',
               }}
             >
-              <span
-                style={{
-                  color: '#888',
-                  fontSize: '0.8rem',
-                  textAlign: 'center',
-                }}
-              >
-                Here will be another VeriPay when it will be created by some
-                trusted partner.
-              </span>
+							<div style={{ float: 'right', fontSize: '0.7rem' }}>
+								Invest via <strong>AAVE</strong>
+							</div>
+							<Statistic
+								title="Total Deposited"
+								value={flow.deposited}
+								precision={2}
+								suffix="ETH"
+							/>
+							<Statistic
+								title="Annual Interest Rate"
+								value={flow.intereset}
+								precision={2}
+								suffix="%"
+							/>
+							<Statistic title="Fee" value={flow.fee} precision={2} />
+							<Statistic
+								title="Developed By"
+								value={flow.developedBy}
+								valueStyle={{ fontSize: '1rem' }}
+							/>
+
+							<CardButton type="primary" onClick={showModal}>
+								<PlusOutlined />
+                Deposit
+              </CardButton>
+							<CardButton type="default">
+								<EyeOutlined />
+                Details
+              </CardButton>
             </Card>
           </Col>
         ))}
