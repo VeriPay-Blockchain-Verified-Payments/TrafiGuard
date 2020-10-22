@@ -8,7 +8,7 @@ const Ganache_privateKey = process.env.GANACHE_PRIVATE_KEY;
 const Ropsten_privateKey = process.env.ROPSTEN_PRIVATE_KEY;
 
 module.exports = {
-  contracts_directory: './contracts',
+  contracts_directory: './contracts/Tradeora Contracts',
 
 	networks: {
 		ganache: {

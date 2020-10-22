@@ -1,7 +1,7 @@
 pragma solidity ^0.6.0;
 pragma experimental ABIEncoderV2;
 
-import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
+import "@chainlink/contracts/src/v0./src/v0.6/ChainlinkClient.sol";
 //import "https://github.com/smartcontractkit/chainlink/evm-contracts/src/v0.6/interfaces/LinkTokenInterface.sol";
 
 /// SPDX-License-Identifier: MIT

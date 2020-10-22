@@ -2,9 +2,9 @@ import React, { createContext, useContext, useState } from 'react'
 import * as _ from 'lodash'
 import Web3 from 'web3'
 
-import depositManagerABI from '../utils/depositManagerABI.json'
-import abi from '../utils/abi.json'
-// import investmentManagerABI from '../utils/investmentManagerABI.json'
+import Underwriting from '../../build/contracts/Underwriting.json'
+import ShipmentCollateralHandling_allinone from '../../build/contracts/ShipmentCollateralHandling_allinone.json'
+// import investmentManagerABI from '../../investmentManagerABI.json'
 
 const web3 = new Web3()
 
@@ -16,11 +16,11 @@ const initialRoot = {
   type: localStorage.getItem('type'),
   defaultAddress: localStorage.getItem('defaultAddress'),
   contractManager: new web3.eth.Contract(
-    abi,
+    ShipmentCollateralHandling_allinone,
     '0xF80f304b47A3386C970415bf0862dCc50C6F95AA'
   ),
   depositManager: new web3.eth.Contract(
-    depositManagerABI,
+    Underwriting,
     '0xd52775456a2EE4F783d466C50214Ee15001f339D'
   ),
   // investmentManager: new web3.eth.Contract(
@@ -70,17 +70,17 @@ export default ({ children }) => {
   const lockCollateral = (address, amount) =>
       initialRoot.contractManager.methods
       .lockCollateral().send({from: address})
-  
-  const takeLoan = () => 
+
+  const takeLoan = () =>
       initialRoot.contractManager.mehhods
       .takeLoan().send()
 
   const deposit = (address, amount, name) =>
     initialRoot.depositManager.methods
-	  .deposit(address, web3.utils.toWei(amount, 'ether'), name)
+	  .deposit(address, web3....toWei(amount, 'ether'), name)
       .send({
         from: address,
-        value: web3.utils.toWei(amount, 'ether'),
+        value: web3....toWei(amount, 'ether'),
       })
 
   return (
