@@ -58,6 +58,11 @@ const ActiveFlows = () => {
     redeemCollateral(defaultAddress,'flow0')
   }
 
+  const handleGetRisk = () => {
+    console.log(defaultAddress, String(amountWei), 'flow0')
+    batch_getRiskScore(defaultAddress,'flow0')
+  }
+  
   
 
   const showModal = () => {
@@ -105,7 +110,7 @@ const ActiveFlows = () => {
       </Col>
       <Col span={24} sm={12} md={8} style={{ marginBottom: '2rem' }}>
             <Card style={{ boxShadow: '1px 5px 15px 0px rgba(0,0,0,0.1)' }}>
-      <CardButtonLrg type="primary" onClick={handleLoan}>
+      <CardButtonLrg type="primary" onClick={handleGetRisk}>
       <PlusOutlined />
                   Get Risk Reduction Score
       </CardButtonLrg>

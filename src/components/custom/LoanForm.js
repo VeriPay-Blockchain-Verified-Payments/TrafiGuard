@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal, Form, Input, Radio } from 'antd';
 import { PlusOutlined, EyeOutlined } from '@ant-design/icons'
 import styled from 'styled-components'
+import { useRoot } from '../../contexts/RootContext'
 
 const CardButton = styled(Button)`
   border-radius: 20px;
@@ -11,13 +12,16 @@ const CardButton = styled(Button)`
 `
 
 
+
+
 const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
+ 
   const [form] = Form.useForm();
   return (
     <Modal
       visible={visible}
       title="Input the information to get risk reduction"
-      okText="Create"
+      okText="Send"
       cancelText="Cancel"
       onCancel={onCancel}
       onOk={() => {
@@ -41,13 +45,13 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         }}
       >
         <Form.Item
-          name="Business Name"
+          name="BusinessName"
           label="Business Name"
         >
           <Input />
         </Form.Item>
         <Form.Item
-          name="Phone Number"
+          name="PhoneNumber"
           label="Phone Number"
           rules={[
             {
@@ -59,7 +63,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           <Input />
         </Form.Item>
         <Form.Item
-          name="Email Address"
+          name="EmailAddress"
           label="Email Address"
           rules={[
             {
@@ -70,7 +74,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         
           <Input />
         </Form.Item>
-        <Form.Item name="Loan Amount" label="Loan Amount"
+        <Form.Item name="LoanAmount" label="Loan Amount"
         rules={[
             {
               required: true,
@@ -79,7 +83,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           ]}>
           <Input />
         </Form.Item>
-        <Form.Item name="Port of Departure" label="Port of Departure"
+        <Form.Item name="PortDeparture" label="Port of Departure"
         rules={[
             {
               required: true,
@@ -88,7 +92,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           ]}>
           <Input />
         </Form.Item>
-        <Form.Item name="Port of Arrival" label="Port of Arrival"
+        <Form.Item name="PortArrival" label="Port of Arrival"
         rules={[
             {
               required: true,
@@ -97,7 +101,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           ]}>
           <Input />
         </Form.Item>
-        <Form.Item name="Loan Duration" label="Loan Duration"
+        <Form.Item name="LoanDuration" label="Loan Duration"
         rules={[
             {
               required: true,
@@ -106,7 +110,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
           ]}>
           <Input />
         </Form.Item>
-        <Form.Item name="Ship MMSI" label="Ship MMSI"
+        <Form.Item name="ShipMMSI" label="Ship MMSI"
         rules={[
             {
               required: true,
@@ -122,10 +126,14 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
 };
 
 const CollectionsPage = () => {
+
+  const { defaultAddress, batchcall_APIs } = useRoot()
+
   const [visible, setVisible] = useState(false);
 
   const onCreate = (values) => {
     console.log('Received values of form: ', values);
+    batchcall_APIs(defaultAddress, values);
     setVisible(false);
   };
 

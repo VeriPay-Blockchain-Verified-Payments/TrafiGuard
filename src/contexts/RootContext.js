@@ -83,6 +83,14 @@ export default ({ children }) => {
   const repayLoan = (address) =>
       initialRoot.collateralHandling.methods
       .repayLoan().send({ from: address })
+
+  const batchcall_APIs = (address, values) =>
+      initialRoot.underwriting.methods
+      .batchcall_APIs(values.PhoneNumber,values.EmailAddress,values.LoanAmount,values.PortArrival,values.PortDeparture,values.LoanDuration,values.ShipMMSI).send({from: address })
+
+  const batch_getRiskScore = (address) =>
+      initialRoot.underwriting.methods
+      .batch_getRiskScore().send({from: address})
       
         
   
@@ -112,6 +120,8 @@ export default ({ children }) => {
         takeOutLoan,
         repayLoan,
         redeemCollateral,
+        batchcall_APIs,
+        batch_getRiskScore
       }}
     >
       {children}
