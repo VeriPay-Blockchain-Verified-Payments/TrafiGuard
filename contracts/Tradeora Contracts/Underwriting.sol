@@ -3,7 +3,7 @@ pragma solidity ^0.6.0;
 
 import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
 import "./BillOfLading.sol";
-import "./LinkPoolClient.sol";
+import "./Financials.sol";
 import "./Vessels.sol";
 import "./SellerDID.sol";
 
@@ -45,7 +45,7 @@ contract Underwriting{
     function call_requestFinancialRiskReduction(string memory tradeID, string memory loanAmount) internal{
         riskScore = 100;
         LoanRequest = loanAmount;
-        LinkPoolClient FIN = LinkPoolClient(FINAddress);
+        Financials FIN = Financials(FINAddress);
         FIN.evalRiskScore(tradeID, loanAmount);
     }
 
@@ -70,7 +70,7 @@ contract Underwriting{
 
 
     function getRiskReductionFIN() internal returns(uint256){
-        LinkPoolClient FIN = LinkPoolClient(FINAddress);
+        Financials FIN = Financials(FINAddress);
         FIN_Reduction = FIN.riskScore();
         riskScore = riskScore - FIN_Reduction;
     }

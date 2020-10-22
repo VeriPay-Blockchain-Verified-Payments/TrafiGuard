@@ -22,14 +22,14 @@ contract Vessels is ChainlinkClient {
     /*
         _oracle = 0x56dd6586DB0D08c6Ce7B2f2805af28616E082455;
         _jobId = "c128fbb0175442c8ba828040fdd1a25e";
-        _API_URL = https://ec2-3-83-110-40.compute-1.amazonaws.com:5000;
+        _API_URL = https://payid.trade:4000;
     */
     constructor()
     public {
     	setPublicChainlinkToken();
     	oracle = 0x56dd6586DB0D08c6Ce7B2f2805af28616E082455; // oracle address
     	jobId = "b6602d14e4734c49a5e1ce19d45a4632";
-    	API_URL = "http://ec2-3-83-110-40.compute-1.amazonaws.com:5000";
+    	API_URL = "http://payid.trade:4000";
     	fee = 0.1 * 10 ** 18; // 0.1 LINK
     	///uint256 initialFunding = fee * 10;
     /*
