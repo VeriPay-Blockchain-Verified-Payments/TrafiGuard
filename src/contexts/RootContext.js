@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from 'react'
 import * as _ from 'lodash'
 import Web3 from 'web3'
 
-import abi from '../utils/abi.json'
+
 import Underwriting from '../utils/json_contracts/Underwriting.json'
 import ShipmentCollateralHandling_allinone from '../utils/json_contracts/ShipmentCollateralHandling.json'
 // import investmentManagerABI from '../../investmentManagerABI.json'
@@ -16,17 +16,13 @@ if (window.ethereum) {
 const initialRoot = {
   type: localStorage.getItem('type'),
   defaultAddress: localStorage.getItem('defaultAddress'),
-  contractManager: new web3.eth.Contract(
-    abi,
-    '0x9886A3eAfa2E1271B3C9e391E665d2e4C3631965'
-  ),
 	collateralHandling: new web3.eth.Contract(
     ShipmentCollateralHandling_allinone,
-    '0xF80f304b47A3386C970415bf0862dCc50C6F95AA'
+    '0x0237768c0648DC9bC6bB1D9D30A3b1113DacfD7c'
   ),
   underwriting: new web3.eth.Contract(
     Underwriting,
-    '0xd52775456a2EE4F783d466C50214Ee15001f339D'
+    '0x83cC97b5472E565fe26408BDF2F6F6C346C10397'
   ),
   // investmentManager: new web3.eth.Contract(
   //   investmentManagerABI,
@@ -76,10 +72,20 @@ export default ({ children }) => {
       initialRoot.collateralHandling.methods
       .lockCollateral().send({from: address})
 
-  const takeLoan = (address) =>
+  const takeOutLoan = (address) =>
       initialRoot.collateralHandling.methods
-			.takeLoan().send({ from: address })
+      .takeOutLoan().send({ from: address })
+  
+  const redeemCollateral = (address) =>
+      initialRoot.collateralHandling.methods
+      .redeemCollateral().send({ from: address })
 
+  const repayLoan = (address) =>
+      initialRoot.collateralHandling.methods
+      .repayLoan().send({ from: address })
+      
+        
+  
   // const deposit = (address, amount, name) =>
   //   initialRoot.underwriting.methods
 	//   .deposit(address,  toWei(amount, 'ether'), name)
@@ -103,7 +109,9 @@ export default ({ children }) => {
         getBalance,
         // deposit,
         lockCollateral,
-        takeLoan
+        takeOutLoan,
+        repayLoan,
+        redeemCollateral,
       }}
     >
       {children}

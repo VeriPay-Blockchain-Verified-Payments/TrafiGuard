@@ -19,7 +19,7 @@
     },
     {
         "inputs": [],
-        "name": "takeOutLoan",
+        "name": "redeemCollateral",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -33,7 +33,7 @@
     },
     {
         "inputs": [],
-        "name": "redeemCollateral",
+        "name": "takeOutLoan",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"

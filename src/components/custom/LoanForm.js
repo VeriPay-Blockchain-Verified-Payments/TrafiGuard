@@ -43,13 +43,31 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
         <Form.Item
           name="Business Name"
           label="Business Name"
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          name="Phone Number"
+          label="Phone Number"
           rules={[
             {
               required: true,
-              message: 'Please input the Business Name!',
+              message: 'Please input the Phone Number!',
             },
-          ]}
-        >
+          ]}>
+        
+          <Input />
+        </Form.Item>
+        <Form.Item
+          name="Email Address"
+          label="Email Address"
+          rules={[
+            {
+              required: true,
+              message: 'Please input the Email Address!',
+            },
+          ]}>
+        
           <Input />
         </Form.Item>
         <Form.Item name="Loan Amount" label="Loan Amount"

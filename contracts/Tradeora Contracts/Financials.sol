@@ -1,7 +1,7 @@
 pragma solidity ^0.6.0;
 
 import "@chainlink/contracts/src/v0.6/ChainlinkClient.sol";
-// import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
+//import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
 
 
 contract Financials is ChainlinkClient {
@@ -31,7 +31,7 @@ contract Financials is ChainlinkClient {
 	{
 		Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfill.selector);
 		request.add("get", "http://payid.trade:4000/financials?portOfOrigin=Mumbai&portOfDestination=NewYork&loanDuration=30");
-		request.add("path", "RiskReduction");
+		request.add("path", "riskReduction");
 		return sendChainlinkRequestTo(oracle, request, fee);
 	}
 

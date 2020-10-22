@@ -26,7 +26,7 @@ const CardButton = styled(Button)`
 
 const Buyer = () => {
   const flows = [
-    { deposited: 0., intereset: 2.5, fee: 12124, developedBy: 'TrafiGuard' },
+    { deposited: 10000, intereset: 2.5, fee: 12124, developedBy: 'TrafiGuard' },
   ]
 
   const history = useHistory()
@@ -48,7 +48,7 @@ const Buyer = () => {
 
   const handleOk = () => {
     console.log(defaultAddress, String(amountWei), 'flow0')
-    lockCollateral(defaultAddress, String(amountWei), 'flow0')
+    lockCollateral(defaultAddress, 'flow0')
   }
 
   const handleCancel = e => {
@@ -115,17 +115,15 @@ const Buyer = () => {
           title="Confirm your payment of the goods to be shipped"
           visible={visible}
           onOk={isLoggedIn() ? handleOk : gotoWallet}
-          okText={isLoggedIn() ? 'Deposit' : 'Connect Wallet'}
+          okText={isLoggedIn() ? 'Lock Collateral' : 'Connect Wallet'}
           onCancel={handleCancel}
         >
           {isLoggedIn() ? (
             <>
               Enter Amount:&nbsp;
               <InputNumber
-                placeholder="0.00 ETH"
                 onChange={setAmountWei}
-                value={amountWei}
-              />
+                />
             </>
           ) : (
             <>

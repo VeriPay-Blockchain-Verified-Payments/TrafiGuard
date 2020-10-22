@@ -23,12 +23,19 @@ import BloomQR from './BloomRequest'
 import { useRoot } from '../../contexts/RootContext'
 
 const CardButton = styled(Button)`
+  text-align: center;
   border-radius: 20px;
   display: block;
   margin: 1rem 0;
   width: 200px;
 `
-
+const CardButtonLrg = styled(Button)`
+  border-radius: 20px;
+  text-align: center;
+  display: block;
+  margin: 1rem 0;
+  width: 240px;
+`
 
 const ActiveFlows = () => {
   const history = useHistory()
@@ -38,8 +45,20 @@ const ActiveFlows = () => {
 
   const handleLoan = () => {
     console.log(defaultAddress, String(amountWei), 'flow0')
-    takeLoan(defaultAddress, String(amountWei), 'flow0')
+    takeOutLoan(defaultAddress,'flow0')
   }
+
+  const handleRepayLoan = () => {
+    console.log(defaultAddress, String(amountWei), 'flow0')
+    repayLoan(defaultAddress,'flow0')
+  }
+
+  const handleRedeemCol = () => {
+    console.log(defaultAddress, String(amountWei), 'flow0')
+    redeemCollateral(defaultAddress,'flow0')
+  }
+
+  
 
   const showModal = () => {
     setVisible(true)
@@ -54,7 +73,7 @@ const ActiveFlows = () => {
     setVisible(false)
   }
 
-  const { isLoggedIn, defaultAddress, takeLoan } = useRoot()
+  const { isLoggedIn, defaultAddress, takeOutLoan, repayLoan, redeemCollateral } = useRoot()
   
 
 
@@ -86,9 +105,33 @@ const ActiveFlows = () => {
       </Col>
       <Col span={24} sm={12} md={8} style={{ marginBottom: '2rem' }}>
             <Card style={{ boxShadow: '1px 5px 15px 0px rgba(0,0,0,0.1)' }}>
+      <CardButtonLrg type="primary" onClick={handleLoan}>
+      <PlusOutlined />
+                  Get Risk Reduction Score
+      </CardButtonLrg>
+      </Card>
+      </Col>
+      <Col span={24} sm={12} md={8} style={{ marginBottom: '2rem' }}>
+            <Card style={{ boxShadow: '1px 5px 15px 0px rgba(0,0,0,0.1)' }}>
       <CardButton type="primary" onClick={handleLoan}>
       <PlusOutlined />
                   Take Loan
+      </CardButton>
+      </Card>
+      </Col>
+      <Col span={24} sm={12} md={8} style={{ marginBottom: '2rem' }}>
+            <Card style={{ boxShadow: '1px 5px 15px 0px rgba(0,0,0,0.1)' }}>
+      <CardButton type="primary" onClick={handleRepayLoan}>
+      <PlusOutlined />
+                  Repay Loan
+      </CardButton>
+      </Card>
+      </Col>
+      <Col span={24} sm={12} md={8} style={{ marginBottom: '2rem' }}>
+            <Card style={{ boxShadow: '1px 5px 15px 0px rgba(0,0,0,0.1)' }}>
+      <CardButton type="primary" onClick={handleRedeemCol}>
+      <PlusOutlined />
+                  Redeem Colateral
       </CardButton>
       </Card>
       </Col>

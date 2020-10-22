@@ -18,7 +18,7 @@ const Tabs = () => (
       tab={
         <span>
           <ShoppingCartOutlined />
-          Buyer
+          Financier
         </span>
       }
       key="1"
