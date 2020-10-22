@@ -50,7 +50,7 @@ contract Underwriting{
 
     //2. Call Bill of lading contract API
     function call_requestBillOfLading() internal returns(uint256){
-        BillOfLadingRequest BOL = BillOfLadingRequest(BOLAddress);
+        BillOfLading BOL = BillOfLading(BOLAddress);
         BOL.requestBillOfLading();
     }
 
@@ -75,7 +75,7 @@ contract Underwriting{
     }
 
     function getRiskReductionBOL() internal returns (uint256){
-        BillOfLadingRequest BOL = BillOfLadingRequest(BOLAddress);
+        BillOfLading BOL = BillOfLading(BOLAddress);
         BOL_Reduction = BOL.risk_reduction();
         riskScore = riskScore - BOL_Reduction;
     }

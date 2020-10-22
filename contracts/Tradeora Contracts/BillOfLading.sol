@@ -1,11 +1,12 @@
 pragma solidity ^0.6.0;
 
 import "@chainlink/contracts/src/v0.6/ChainlinkClient.sol";
+// import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
 
 
 /// SPDX-License-Identifier: MIT
 
-contract BillOfLadingRequest is ChainlinkClient {
+contract BillOfLading is ChainlinkClient {
 
     bool public is_Valid;
     uint256 public risk_reduction;
