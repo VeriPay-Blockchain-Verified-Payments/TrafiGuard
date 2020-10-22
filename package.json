@@ -6,6 +6,7 @@
     "@biconomy/mexa": "^1.5.13",
     "@bloomprotocol/share-kit": "^7.6.1",
     "@bloomprotocol/share-kit-react": "^4.5.1",
+    "@chainlink/contracts": "0.0.10",
     "@compound-finance/compound-js": "^0.2.0",
     "@gnosis.pm/safe-apps-sdk": "^0.4.2",
     "@opengsn/gsn": "^2.0.1",
