@@ -15,11 +15,11 @@ if (window.ethereum) {
 const initialRoot = {
   type: localStorage.getItem('type'),
   defaultAddress: localStorage.getItem('defaultAddress'),
-  contractManager: new web3.eth.Contract(
+	collateralHandling: new web3.eth.Contract(
     ShipmentCollateralHandling_allinone,
     '0xF80f304b47A3386C970415bf0862dCc50C6F95AA'
   ),
-  depositManager: new web3.eth.Contract(
+  underwriting: new web3.eth.Contract(
     Underwriting,
     '0xd52775456a2EE4F783d466C50214Ee15001f339D'
   ),
@@ -67,21 +67,21 @@ export default ({ children }) => {
 
   // window.web3 = web3
   // window.root = initialRoot
-  const lockCollateral = (address, amount) =>
-      initialRoot.contractManager.methods
+  const lockCollateral = (address) =>
+      initialRoot.collateralHandling.methods
       .lockCollateral().send({from: address})
 
-  const takeLoan = () =>
-      initialRoot.contractManager.mehhods
-      .takeLoan().send()
+  const takeLoan = (address) =>
+      initialRoot.collateralHandling.methods
+			.takeLoan().send({ from: address })
 
-  const deposit = (address, amount, name) =>
-    initialRoot.depositManager.methods
-	  .deposit(address, web3....toWei(amount, 'ether'), name)
-      .send({
-        from: address,
-        value: web3....toWei(amount, 'ether'),
-      })
+  // const deposit = (address, amount, name) =>
+  //   initialRoot.underwriting.methods
+	//   .deposit(address,  toWei(amount, 'ether'), name)
+  //     .send({
+  //       from: address,
+	// 			value: collateralHandling..toWei(amount, 'ether'),
+  //     })
 
   return (
     <RootContext.Provider
@@ -96,7 +96,7 @@ export default ({ children }) => {
         web3,
         momsContracts: initialRoot.momsContracts,
         getBalance,
-        deposit,
+        // deposit,
         lockCollateral,
         takeLoan
       }}
