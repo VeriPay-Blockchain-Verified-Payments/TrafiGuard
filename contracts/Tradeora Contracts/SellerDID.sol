@@ -5,7 +5,7 @@ import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm
 //import "https://github.com/smartcontractkit/chainlink/evm-contracts/src/v0.6/interfaces/LinkTokenInterface.sol";
 
 /// SPDX-License-Identifier: MIT
-
+// Deployed on: Kovan at: 0x71Bf3281b35AEf03a4a89b660E9666B24c8090d0
 contract SellerDID is ChainlinkClient {
     address private oracle;
     bytes32 private jobId;
