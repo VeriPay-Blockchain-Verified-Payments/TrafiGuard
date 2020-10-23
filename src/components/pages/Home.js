@@ -170,7 +170,7 @@ const Home = () => {
         How does it work?
         <VideoLink style={{ textAlign: 'center', display: 'block' }}>
           <PlayCircleOutlined className="icon" />
-          <a href="/">Watch video</a>
+          <a href="https://youtu.be/QMix9-AlrM4">Watch video</a>
         </VideoLink>
       </Title>
 
@@ -237,7 +237,7 @@ const Home = () => {
           <ButtonsGroup>
             <VideoLink>
               <PlayCircleOutlined className="icon" />
-              <a href="/">Watch video</a>
+              <a href="https://youtu.be/QMix9-AlrM4">Watch video</a>
             </VideoLink>
 
             <FancyButton smooth to="/#marketplace">
