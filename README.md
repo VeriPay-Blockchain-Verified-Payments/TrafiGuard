@@ -7,6 +7,21 @@
 
 
 
+
+
+## Illustrations
+
+
+## TrafiGuard : Flow
+
+<img src="images/slide6.png">
+
+
+## TrafiGuard : Team
+
+<img src="images/slide8.png">
+
+
 ## Latest Deployment
 
 4_Underwriting.js
