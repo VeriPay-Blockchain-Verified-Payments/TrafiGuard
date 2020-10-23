@@ -212,15 +212,11 @@ app.get('/vessel', (req, res) => {
 
    const url = 'https://services.marinetraffic.com/api/exportvessel/v:5/dbd87f37b7890047b923aade1004987a7b0e862c/timespan:2000/protocol:jsono/mmsi:' + mmsi
 
-   axios({ method: 'get', url }).then((response) => {
+	let status = parseInt(response.data[0].STATUS)
+	riskReduction = !!url ? riskReduction + 10 : riskReduction
+	console.log(url)
 
-      let status = parseInt(response.data[0].STATUS)
-      console.log(status)
-      riskReduction = status === 0 ? riskReduction + 10 : riskReduction
-
-      res.send({ riskReduction });
-   })
-   .catch(console.log)
+	res.send({ riskReduction });
 })
 
 
