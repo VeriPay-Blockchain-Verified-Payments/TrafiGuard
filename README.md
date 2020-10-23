@@ -7,19 +7,17 @@
 
 
 
-
-
 ## Illustrations
 
 
 ## TrafiGuard : Flow
 
-<img src="slide6.png">
+<img src="images/Slide6.png">
 
 
 ## TrafiGuard : Team
 
-<img src="slide8.png">
+<img src="images/Slide8.png">
 
 
 ## Latest Deployment
