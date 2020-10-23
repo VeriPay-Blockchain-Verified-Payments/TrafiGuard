@@ -9,6 +9,10 @@
 
 ## Illustrations
 
+## TrafiGuard : Supply Chain Trade Finance made Inclusive
+
+<img src="images/Slide1.png">
+
 
 ## TrafiGuard : Flow
 
