@@ -14,12 +14,12 @@
 
 ## TrafiGuard : Flow
 
-<img src="./images/slide6.png">
+<img src="slide6.png">
 
 
 ## TrafiGuard : Team
 
-<img src="./images/slide8.png">
+<img src="slide8.png">
 
 
 ## Latest Deployment
