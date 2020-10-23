@@ -1,3 +1,12 @@
+## Deliverables
+
+* ### [Presentation:](  https://drive.google.com/file/d/1cOfETXQc_P9v6pN_TQOT9DPq5_Z3fZnz/view?usp=sharing   ) Please follow the link
+
+* ### [Demo video:]( https://youtu.be/QMix9-AlrM4 ) Please follow the link
+
+
+
+
 ## Latest Deployment
 
 4_Underwriting.js
